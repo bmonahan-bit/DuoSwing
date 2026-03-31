@@ -1,0 +1,11 @@
+{
+  "name": "duoswing-landing",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "convex dev",
+    "deploy": "convex deploy"
+  },
+  "dependencies": {
+    "convex": "^1.9.0"
+  }
+}

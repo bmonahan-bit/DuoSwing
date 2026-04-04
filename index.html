@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SyncShot — Two Angles. One Tap.</title>
+<title>DuoSwing — Two Angles. One Tap.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -516,7 +516,7 @@
   }
 
   .final::before {
-    content: 'SYNCSHOT';
+    content: 'DUOSWING';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -594,7 +594,7 @@
       <div class="logo-ring"></div>
       <div class="logo-dot"></div>
     </div>
-    <span class="nav-wordmark">SYNC<span>SHOT</span></span>
+    <span class="nav-wordmark">DUO<span>SWING</span></span>
   </a>
   <a href="#waitlist" class="nav-cta">Get Early Access</a>
 </nav>
@@ -603,7 +603,7 @@
 <section class="hero">
   <div class="hero-eyebrow">Golf Swing Recording — Reimagined</div>
   <h1>Two Angles.<span class="line2">One Tap.</span></h1>
-  <p class="hero-sub">SyncShot connects two phones to record your golf swing simultaneously from face-on and down-the-line. Then connects you to coaches who can fix what they see.</p>
+  <p class="hero-sub">DuoSwing connects two phones to record your golf swing simultaneously from face-on and down-the-line. Then connects you to coaches who can fix what they see.</p>
 
   <!-- Split view mockup -->
   <div class="split-view">
@@ -649,13 +649,13 @@
       <button class="submit-btn" onclick="submit1()">Get Access</button>
     </div>
     <p class="form-note">Early access. No spam. Unsubscribe anytime.</p>
-    <div class="success-msg" id="success1">You're in. We'll reach out when SyncShot launches.</div>
+    <div class="success-msg" id="success1">You're in. We'll reach out when DuoSwing launches.</div>
   </div>
 </section>
 
 <!-- Features -->
 <section class="features reveal">
-  <div class="section-eyebrow">Why SyncShot</div>
+  <div class="section-eyebrow">Why DuoSwing</div>
   <div class="section-title">Built for<br>serious golfers.</div>
   <div class="features-grid">
     <div class="feature-cell">
@@ -713,7 +713,7 @@
       <li>Record voice notes over student swings</li>
       <li>Manage up to 20 students from one dashboard</li>
       <li>Keep 82% of earnings — we take 18% for payment, support, and marketplace</li>
-      <li>Get discovered in the SyncShot coach marketplace</li>
+      <li>Get discovered in the DuoSwing coach marketplace</li>
     </ul>
   </div>
 </div>
@@ -755,8 +755,8 @@
 </section>
 
 <footer>
-  <div class="footer-word">SyncShot</div>
-  <div class="footer-copy">© 2026 SyncShot. All rights reserved.</div>
+  <div class="footer-word">DuoSwing</div>
+  <div class="footer-copy">© 2026 DuoSwing. All rights reserved.</div>
 </footer>
 
 <script>
@@ -783,9 +783,9 @@
     document.getElementById('email2').disabled = true;
   }
   function save(email, type) {
-    const s = JSON.parse(localStorage.getItem('syncshot_signups') || '[]');
+    const s = JSON.parse(localStorage.getItem('duoswing_signups') || '[]');
     s.push({ email, type, ts: new Date().toISOString() });
-    localStorage.setItem('syncshot_signups', JSON.stringify(s));
+    localStorage.setItem('duoswing_signups', JSON.stringify(s));
   }
   document.addEventListener('keydown', e => {
     if (e.key !== 'Enter') return;

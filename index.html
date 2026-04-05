@@ -22,6 +22,54 @@
     --text-muted: #9C9C9C;
   }
 
+  [data-theme="dark"] {
+    --shot: #4DB87A;
+    --shot-dim: #3D9660;
+    --navy: #7B9CC4;
+    --bg: #0C1018;
+    --bg-card: #131A28;
+    --bg-elevated: #1B2740;
+    --border: #253147;
+    --text: #EAE6DF;
+    --text-secondary: #8B97A8;
+    --text-muted: #4B5768;
+  }
+
+  [data-theme="dark"] nav {
+    background: rgba(12,16,24,0.96);
+  }
+
+  [data-theme="dark"] body::before {
+    background-image:
+      linear-gradient(rgba(123,156,196,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(123,156,196,0.04) 1px, transparent 1px);
+  }
+
+  [data-theme="dark"] .final::before {
+    color: rgba(123,156,196,0.03);
+  }
+
+  /* ── Dark mode toggle ── */
+  .theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: border-color 0.2s, color 0.2s;
+    padding: 0;
+  }
+  .theme-toggle:hover {
+    border-color: var(--shot);
+    color: var(--shot);
+  }
+
   html { scroll-behavior: smooth; }
 
   body {
@@ -596,7 +644,12 @@
     </div>
     <span class="nav-wordmark">DUO<span>SWING</span></span>
   </a>
-  <a href="#waitlist" class="nav-cta">Get Early Access</a>
+  <div style="display:flex;align-items:center;gap:8px;">
+    <a href="#waitlist" class="nav-cta">Get Early Access</a>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
 </nav>
 
 <!-- Hero -->
@@ -712,7 +765,7 @@
       <li>Annotate directly on video with drawing tools</li>
       <li>Record voice notes over student swings</li>
       <li>Manage up to 20 students from one dashboard</li>
-      <li>Keep 82% of earnings — we take 18% for payment, support, and marketplace</li>
+      <li>Set your own rates — keep 100% of your coaching earnings</li>
       <li>Get discovered in the DuoSwing coach marketplace</li>
     </ul>
   </div>
@@ -729,7 +782,7 @@
         <path d="M18 10 L18 26 M12 14 L24 22 M24 14 L12 22" stroke="#3D7A3D" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
       <div class="feature-title">For Coaches</div>
-      <p class="feature-body">Keep 82% of earnings. We take 18% for payment processing, customer support, and marketplace access.</p>
+      <p class="feature-body">Set your own rates. Keep 100% of your coaching revenue — no commission, ever.</p>
     </div>
     <div class="feature-cell">
       <svg class="feature-icon" viewBox="0 0 36 36" fill="none">
@@ -796,6 +849,33 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // ── Dark mode ──
+  const MOON_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  const SUN_SVG  = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+
+  function updateThemeIcon(theme) {
+    const btn = document.getElementById('themeToggle');
+    if (btn) btn.innerHTML = theme === 'dark' ? SUN_SVG : MOON_SVG;
+  }
+
+  function toggleTheme() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    updateThemeIcon(next);
+    localStorage.setItem('duoswing_theme', next);
+  }
+
+  (function() {
+    const saved = localStorage.getItem('duoswing_theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.addEventListener('DOMContentLoaded', () => updateThemeIcon('dark'));
+    }
+  })();
 </script>
 </body>
 </html>

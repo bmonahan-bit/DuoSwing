@@ -10,8 +10,9 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --shot: #3D7A3D;
-    --shot-dim: #2D5F2D;
+    --shot: #2D5016;
+    --shot-dim: #1E3810;
+    --gold: #C9A84C;
     --navy: #1B2A4A;
     --bg: #F8F6F1;
     --bg-card: #EEE9DF;
@@ -23,8 +24,9 @@
   }
 
   [data-theme="dark"] {
-    --shot: #4DB87A;
-    --shot-dim: #3D9660;
+    --shot: #C9A84C;
+    --shot-dim: #A8893D;
+    --gold: #C9A84C;
     --navy: #7B9CC4;
     --bg: #0C1018;
     --bg-card: #131A28;
@@ -381,7 +383,7 @@
   .email-input:focus { border-color: var(--shot); }
 
   .submit-btn {
-    background: var(--shot);
+    background: var(--gold);
     color: var(--bg);
     border: none;
     border-radius: 4px;
@@ -654,7 +656,7 @@
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-eyebrow">Golf Swing Recording — Reimagined</div>
+  <div class="hero-eyebrow">Swing analysis that actually helps.</div>
   <h1>Two Angles.<span class="line2">One Tap.</span></h1>
   <p class="hero-sub">DuoSwing connects two phones to record your golf swing simultaneously from face-on and down-the-line. Then connects you to coaches who can fix what they see.</p>
 
@@ -664,13 +666,13 @@
       <div class="view-label">Face-On</div>
       <div class="view-rec"></div>
       <svg width="56" height="90" viewBox="0 0 56 90" fill="none">
-        <circle cx="28" cy="10" r="7" fill="#3D7A3D" opacity="0.6"/>
-        <line x1="28" y1="17" x2="28" y2="50" stroke="#3D7A3D" stroke-width="2.5" opacity="0.6"/>
-        <line x1="28" y1="28" x2="10" y2="42" stroke="#3D7A3D" stroke-width="2" opacity="0.6"/>
-        <line x1="28" y1="28" x2="50" y2="20" stroke="#3D7A3D" stroke-width="2" opacity="0.6"/>
-        <line x1="28" y1="50" x2="16" y2="74" stroke="#3D7A3D" stroke-width="2.5" opacity="0.6"/>
-        <line x1="28" y1="50" x2="40" y2="74" stroke="#3D7A3D" stroke-width="2.5" opacity="0.6"/>
-        <path d="M50 22 Q58 18 54 28" stroke="#3D7A3D" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.4"/>
+        <circle cx="28" cy="10" r="7" fill="#2D5016" opacity="0.6"/>
+        <line x1="28" y1="17" x2="28" y2="50" stroke="#2D5016" stroke-width="2.5" opacity="0.6"/>
+        <line x1="28" y1="28" x2="10" y2="42" stroke="#2D5016" stroke-width="2" opacity="0.6"/>
+        <line x1="28" y1="28" x2="50" y2="20" stroke="#2D5016" stroke-width="2" opacity="0.6"/>
+        <line x1="28" y1="50" x2="16" y2="74" stroke="#2D5016" stroke-width="2.5" opacity="0.6"/>
+        <line x1="28" y1="50" x2="40" y2="74" stroke="#2D5016" stroke-width="2.5" opacity="0.6"/>
+        <path d="M50 22 Q58 18 54 28" stroke="#2D5016" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.4"/>
       </svg>
     </div>
     <div class="view-divider">
@@ -680,13 +682,13 @@
       <div class="view-label">Down-the-Line</div>
       <div class="view-rec"></div>
       <svg width="56" height="90" viewBox="0 0 56 90" fill="none">
-        <circle cx="28" cy="10" r="7" fill="#3D7A3D" opacity="0.6"/>
-        <line x1="28" y1="17" x2="28" y2="50" stroke="#3D7A3D" stroke-width="2.5" opacity="0.6"/>
-        <line x1="28" y1="28" x2="14" y2="26" stroke="#3D7A3D" stroke-width="2" opacity="0.6"/>
-        <line x1="28" y1="28" x2="46" y2="40" stroke="#3D7A3D" stroke-width="2" opacity="0.6"/>
-        <line x1="28" y1="50" x2="20" y2="74" stroke="#3D7A3D" stroke-width="2.5" opacity="0.6"/>
-        <line x1="28" y1="50" x2="36" y2="74" stroke="#3D7A3D" stroke-width="2.5" opacity="0.6"/>
-        <path d="M46 42 Q54 46 48 54" stroke="#3D7A3D" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.4"/>
+        <circle cx="28" cy="10" r="7" fill="#2D5016" opacity="0.6"/>
+        <line x1="28" y1="17" x2="28" y2="50" stroke="#2D5016" stroke-width="2.5" opacity="0.6"/>
+        <line x1="28" y1="28" x2="14" y2="26" stroke="#2D5016" stroke-width="2" opacity="0.6"/>
+        <line x1="28" y1="28" x2="46" y2="40" stroke="#2D5016" stroke-width="2" opacity="0.6"/>
+        <line x1="28" y1="50" x2="20" y2="74" stroke="#2D5016" stroke-width="2.5" opacity="0.6"/>
+        <line x1="28" y1="50" x2="36" y2="74" stroke="#2D5016" stroke-width="2.5" opacity="0.6"/>
+        <path d="M46 42 Q54 46 48 54" stroke="#2D5016" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.4"/>
       </svg>
     </div>
   </div>
@@ -713,29 +715,29 @@
   <div class="features-grid">
     <div class="feature-cell">
       <svg class="feature-icon" viewBox="0 0 36 36" fill="none">
-        <rect x="2" y="6" width="14" height="24" rx="3" stroke="#3D7A3D" stroke-width="1.8"/>
-        <rect x="20" y="6" width="14" height="24" rx="3" stroke="#3D7A3D" stroke-width="1.8"/>
-        <line x1="16" y1="18" x2="20" y2="18" stroke="#3D7A3D" stroke-width="1.5" stroke-dasharray="2 1.5"/>
-        <circle cx="18" cy="18" r="2" fill="#3D7A3D"/>
+        <rect x="2" y="6" width="14" height="24" rx="3" stroke="#2D5016" stroke-width="1.8"/>
+        <rect x="20" y="6" width="14" height="24" rx="3" stroke="#2D5016" stroke-width="1.8"/>
+        <line x1="16" y1="18" x2="20" y2="18" stroke="#2D5016" stroke-width="1.5" stroke-dasharray="2 1.5"/>
+        <circle cx="18" cy="18" r="2" fill="#2D5016"/>
       </svg>
       <div class="feature-title">Instant Sync</div>
       <p class="feature-body">Both phones start recording at exactly the same moment. No clapping, no manual alignment — synchronized at the millisecond.</p>
     </div>
     <div class="feature-cell">
       <svg class="feature-icon" viewBox="0 0 36 36" fill="none">
-        <circle cx="18" cy="18" r="14" stroke="#3D7A3D" stroke-width="1.8"/>
-        <path d="M18 10 L18 18 L24 22" stroke="#3D7A3D" stroke-width="1.8" stroke-linecap="round"/>
-        <circle cx="18" cy="18" r="2" fill="#3D7A3D"/>
+        <circle cx="18" cy="18" r="14" stroke="#2D5016" stroke-width="1.8"/>
+        <path d="M18 10 L18 18 L24 22" stroke="#2D5016" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="18" cy="18" r="2" fill="#2D5016"/>
       </svg>
       <div class="feature-title">240fps Slow-Mo</div>
       <p class="feature-body">Frame-by-frame playback at up to 240fps. See every inch of your club path, face angle, and body rotation.</p>
     </div>
     <div class="feature-cell">
       <svg class="feature-icon" viewBox="0 0 36 36" fill="none">
-        <circle cx="14" cy="14" r="8" stroke="#3D7A3D" stroke-width="1.8"/>
-        <path d="M20 20 L30 30" stroke="#3D7A3D" stroke-width="1.8" stroke-linecap="round"/>
-        <circle cx="26" cy="10" r="4" stroke="#3D7A3D" stroke-width="1.5"/>
-        <path d="M28 14 L30 22" stroke="#3D7A3D" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="14" cy="14" r="8" stroke="#2D5016" stroke-width="1.8"/>
+        <path d="M20 20 L30 30" stroke="#2D5016" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="26" cy="10" r="4" stroke="#2D5016" stroke-width="1.5"/>
+        <path d="M28 14 L30 22" stroke="#2D5016" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
       <div class="feature-title">Coach Marketplace</div>
       <p class="feature-body">Submit your dual-angle session to a certified coach. Get annotated video feedback back within 24 hours.</p>
@@ -778,16 +780,16 @@
   <div class="features-grid" style="margin-top:48px; grid-template-columns: 1fr 1fr;">
     <div class="feature-cell">
       <svg class="feature-icon" viewBox="0 0 36 36" fill="none">
-        <path d="M18 4 L32 12 L32 24 L18 32 L4 24 L4 12 Z" stroke="#3D7A3D" stroke-width="1.8"/>
-        <path d="M18 10 L18 26 M12 14 L24 22 M24 14 L12 22" stroke="#3D7A3D" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M18 4 L32 12 L32 24 L18 32 L4 24 L4 12 Z" stroke="#2D5016" stroke-width="1.8"/>
+        <path d="M18 10 L18 26 M12 14 L24 22 M24 14 L12 22" stroke="#2D5016" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
       <div class="feature-title">For Coaches</div>
       <p class="feature-body">Set your own rates. Keep 100% of your coaching revenue — no commission, ever.</p>
     </div>
     <div class="feature-cell">
       <svg class="feature-icon" viewBox="0 0 36 36" fill="none">
-        <circle cx="18" cy="18" r="14" stroke="#3D7A3D" stroke-width="1.8"/>
-        <path d="M18 10 L18 14 M18 22 L18 26 M13 15 Q13 11 18 11 Q23 11 23 15 Q23 18 18 18 Q18 18 18 22" stroke="#3D7A3D" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="18" cy="18" r="14" stroke="#2D5016" stroke-width="1.8"/>
+        <path d="M18 10 L18 14 M18 22 L18 26 M13 15 Q13 11 18 11 Q23 11 23 15 Q23 18 18 18 Q18 18 18 22" stroke="#2D5016" stroke-width="1.6" stroke-linecap="round"/>
       </svg>
       <div class="feature-title">For Students</div>
       <p class="feature-body">$19/month gives you unlimited coaching access. No per-session fees. No hidden charges.</p>
